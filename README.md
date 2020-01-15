@@ -1,6 +1,6 @@
 # pixi_type_script
 * 最初に以下のリンクでnode.jsをインストール
-`https://nodejs.org/en/`
+[node.jsサイト](https://nodejs.org/en/)
 * インストールが終わったら以下のコマンドでインストール確認
 ```bash
 node -v
@@ -8,6 +8,25 @@ node -v
 * 次にフォルダーをnodeを使って初期化する(設定はpackage.jsonを確認)
 ```bash
 npm init
+```
+
+# 本書で使用する開発環境
+* 開発言語関連
+TypeScript
+```bash
+JavaScriptに静的型付けなどの拡張を行ったオープンソースプログラミング言語
+```
+TypeDoc
+```bash
+TypeScriptのドキュメント生成ツール
+```
+TSLint
+```bash
+TypeScriptのリントツール(構文チェッカー)
+```
+tslint-config-airbnb
+```bash
+TSLintルールのテンプレート
 ```
 
 # ここでインストールするTypeScriptモジュール
