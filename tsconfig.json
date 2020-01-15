@@ -1,0 +1,21 @@
+{
+	// https://www.typescriptlang.org/docs/home.htmlを参考
+	"compileerOption": {
+		// target : 動作環境がブラウザであるため「es5」を指定(古いバージョンのブラウザでは、es6のAPIを利用すると動作しないため)。
+		// lib : DOMのAPIを利用するため明示
+		// declaration : TypeScript型定義ファイルを生成。
+		// forceConsistentCasingInFileNames : Windowsなどの環境ではパス指定時の大文字・小文字の違いは区別されないが、これが問題になる環境もあるのでtrueに設定
+		"target" : "es5",
+		"module" : "esnext",
+		"lib" : [
+			"esnext",
+			"dom"
+		],
+		"baseUrl" : "./src",
+		"outDir" : "./lib-ts",
+		"declaration" : true,
+		"sourceMap" : true,
+		"allowJs": false,
+		"forceConsistentCasingInFileNames" : true
+	},
+}

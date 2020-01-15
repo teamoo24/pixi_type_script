@@ -1,0 +1,18 @@
+{
+  "name": "test_npm",
+  "version": "1.0.0",
+  "description": "this is a test package!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Smith",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "tslint": "^5.20.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "typedoc": "^0.16.2",
+    "typescript": "^3.7.4"
+  }
+}
