@@ -12,6 +12,7 @@ npm init
 
 # 本書で使用する開発環境
 * 開発言語関連
+
 TypeScript
 ```bash
 JavaScriptに静的型付けなどの拡張を行ったオープンソースプログラミング言語
