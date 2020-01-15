@@ -9,8 +9,29 @@ node -v
 ```bash
 npm init
 ```
-* 次にTypeScriptをインストールするコード
+
+# ここでインストールするTypeScriptモジュール
+* typescript
+以下のコマンドでインストールできます。
 ```bash
 npm i --save-dev typescript tslint tslint-config-airbnb typedoc
 ```
-* 次にtsconfig.json追加(ソースはファイル確認)
+* tslint
+* tslint-config-airbng
+* typedoc
+
+# ファイルの説明
+* tsconfig.json
+最低限の設定としてpackage.jsonと同いフォルダに保管
+
+# TypeScriptへのトランスファイル方法
+* tscコマンドを実行してjsファイルをtsにトランスファイルする。
+以下のコマンドでトランスファイル。
+```bash
+$ ./node_modules/.bin/tsc -p .
+```
+その後、index.jsを実行すると以下のような結果を得られる
+```bash
+$ node index.js
+3
+```
