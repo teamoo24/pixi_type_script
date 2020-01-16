@@ -14,5 +14,17 @@
     "tslint-config-airbnb": "^5.11.2",
     "typedoc": "^0.16.2",
     "typescript": "^3.7.4"
+  },
+  // これまで利用したコマンド類簡潔に利用できるようにしてくれるScriptを登録する
+  // scriptに設定したスクリプトは、「npm run <script name>」という形式で実行することで、以下のコマンドを実行できる
+  // ようすると
+  // npm run tsc
+  // npm run tslint
+  // npm run typedoc
+  // で以下のコマンドを実行できるようになる
+  "scripts":{
+    "tsc" : "tsc -p .",
+    "tslint" : "tslint -p .",
+    "typedoc" : "typedoc -p ."
   }
 }

@@ -95,3 +95,18 @@ $ ./node_modules/.bin/tsc -p .
 $ node index.js
 3
 ```
+
+# コマンド目録
+
+tsc
+```bash
+npm run tsc
+```
+tslint
+```bash
+npm run tslint
+```
+typedoc
+```bash
+npm run typedoc
+```
