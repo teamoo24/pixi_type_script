@@ -11,62 +11,63 @@ npm init
 ```
 
 # 本書で使用する開発環境
-* 開発言語関連
+開発言語関連
 
-TypeScript
+* TypeScript
 ```bash
 JavaScriptに静的型付けなどの拡張を行ったオープンソースプログラミング言語
 ```
-TypeDoc
+* TypeDoc
 ```bash
 TypeScriptのドキュメント生成ツール
 ```
-TSLint
+* TSLint
 ```bash
 TypeScriptのリントツール(構文チェッカー)
 ```
-tslint-config-airbnb
+* tslint-config-airbnb
 ```bash
 TSLintルールのテンプレート
 ```
 
-* 描画ライブラリ
-PIXI.js
+描画ライブラリ
+* PIXI.js
 ```bash
 2D描画ライブラリ
 ```
-@types/pixi.js
+* @types/pixi.js
 ```bash
 PIXI.jsのTypeScript向け型定義
 ```
 
-* JavaScript実行ライブラリ
-node.js
+JavaScript実行ライブラリ
+* node.js
 ```bash
 JavaScript実行環境
 ```
-npm
+* npm
 ```bash
 Node.jsパッケージマネージャ
 ```
 
-* バンドラ
-webpack
+バンドラ
+* webpack
 ```bash
 JavaScriptファイルバンドラ
 ```
-webpack-cli
+* webpack-cli
 ```bash
 webpackのCLI実行環境
 ```
-ts-loader
+* ts-loader
 ```bash
 webpackでTypeScriptをトランスパイルできるようにするためのプラグイン
 ```
 
-* Webサーバ
+Webサーバ
+* webpack-dev-server
 ```bash
-webpack-dev-serverローカル環境での開発用のWebサーバ
+ローカル環境での開発用のWebサーバ
 ```
 
 # ここでインストールするTypeScriptモジュール
