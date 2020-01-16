@@ -1,0 +1,9 @@
+// TypeScriptでプログラミングする上で厳守するためのコードの規約設定
+// 実行コマンド : ./node_modules/.bin/tslint -p .
+{
+	"defaultSeverity" : "error",
+	"extends" : [
+		"tslint-config-airbnb"
+	]
+}
+// 2019年1月からtslintではなくeslintを使い始めたのでESLintに移行必要
