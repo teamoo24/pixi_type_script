@@ -30,6 +30,45 @@ tslint-config-airbnb
 TSLintルールのテンプレート
 ```
 
+* 描画ライブラリ
+PIXI.js
+```bash
+2D描画ライブラリ
+```
+@types/pixi.js
+```bash
+PIXI.jsのTypeScript向け型定義
+```
+
+* JavaScript実行ライブラリ
+node.js
+```bash
+JavaScript実行環境
+```
+npm
+```bash
+Node.jsパッケージマネージャ
+```
+
+* バンドラ
+webpack
+```bash
+JavaScriptファイルバンドラ
+```
+webpack-cli
+```bash
+webpackのCLI実行環境
+```
+ts-loader
+```bash
+webpackでTypeScriptをトランスパイルできるようにするためのプラグイン
+```
+
+* Webサーバ
+```bash
+webpack-dev-serverローカル環境での開発用のWebサーバ
+```
+
 # ここでインストールするTypeScriptモジュール
 * typescript
 以下のコマンドでインストールできます。
