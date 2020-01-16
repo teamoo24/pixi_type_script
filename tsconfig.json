@@ -18,4 +18,12 @@
 		"allowJs": false,
 		"forceConsistentCasingInFileNames" : true
 	},
+	// typedocは名前のとおり、TypeScriptコードのドキュメント生成を行うことができるモジュールです。
+	// 実行コマンド : /node_modules/.bin/typedoc -p .
+	// 上記のコマンドを入力することでドキュメントを作成できる
+	"typedocOptions" : {
+		"name": "test_npm",
+		"mode": "file",
+		"out": "./docs"
+	}
 }

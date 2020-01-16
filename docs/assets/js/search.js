@@ -1,0 +1,3 @@
+var typedoc = typedoc || {};
+            typedoc.search = typedoc.search || {};
+            typedoc.search.data = {"kinds":{"32":"Variable","64":"Function"},"rows":[{"id":0,"kind":64,"name":"sum","url":"globals.html#sum","classes":"tsd-kind-function"},{"id":1,"kind":32,"name":"n","url":"globals.html#n","classes":"tsd-kind-variable"},{"id":2,"kind":32,"name":"s","url":"globals.html#s","classes":"tsd-kind-variable"},{"id":3,"kind":32,"name":"result","url":"globals.html#result","classes":"tsd-kind-variable"}]};
