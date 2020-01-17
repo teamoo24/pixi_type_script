@@ -1,10 +1,5 @@
 {
-	// https://www.typescriptlang.org/docs/home.htmlを参考
 	"compileerOption": {
-		// target : 動作環境がブラウザであるため「es5」を指定(古いバージョンのブラウザでは、es6のAPIを利用すると動作しないため)。
-		// lib : DOMのAPIを利用するため明示
-		// declaration : TypeScript型定義ファイルを生成。
-		// forceConsistentCasingInFileNames : Windowsなどの環境ではパス指定時の大文字・小文字の違いは区別されないが、これが問題になる環境もあるのでtrueに設定
 		"target" : "es5",
 		"module" : "esnext",
 		"lib" : [
@@ -16,11 +11,18 @@
 		"declaration" : true,
 		"sourceMap" : true,
 		"allowJs": false,
-		"forceConsistentCasingInFileNames" : true
+		"forceConsistentCasingInFileNames" : true,
+		"allowSyntheticDefaultImports": false,
+		"moduleResolution" : "node",
+		"strict": true,
+		"alwaysStrict": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"preserveConstEnums": false
 	},
-	// typedocは名前のとおり、TypeScriptコードのドキュメント生成を行うことができるモジュールです。
-	// 実行コマンド : /node_modules/.bin/typedoc -p .
-	// 上記のコマンドを入力することでドキュメントを作成できる
+	"compileOnSave": true,
 	"typedocOptions" : {
 		"name": "test_npm",
 		"mode": "file",
