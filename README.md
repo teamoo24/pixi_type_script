@@ -110,3 +110,11 @@ typedoc
 ```bash
 npm run typedoc
 ```
+webpack
+```bash
+npm run webpack
+```
+server
+```bash
+npm run server
+```

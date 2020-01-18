@@ -19,6 +19,10 @@ module.exports = (env, argv) => {
 					use: [{loader: 'ts-loader'}]
 				}
 			]
-		}
+		},
+		devServer: {
+			contentBase: 'www',
+			port: 8080
+		},
 	}
 };

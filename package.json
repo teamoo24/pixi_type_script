@@ -7,12 +7,16 @@
     "tsc": "tsc -p .",
     "tslint": "tslint -p .",
     "typedoc": "typedoc -p .",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "server": "webpack-dev-server"
   },
   "author": "Smith",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "pixi.js": "^4.8.9"
+  },
   "devDependencies": {
+    "@types/pixi.js": "^5.0.0",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.1",
     "tslint-config-airbnb": "^5.11.2",
