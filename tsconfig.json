@@ -20,9 +20,18 @@
 		"noFallthroughCasesInSwitch": false,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"preserveConstEnums": false
+		"preserveConstEnums": false,
+		"moduleResolution":"node"
 	},
 	"compileOnSave": true,
+	"include":[
+		"src/**/*"
+	],
+	"exclude": [
+		"./git",
+		"node_module",
+		"lib"
+	],
 	"typedocOptions" : {
 		"name": "test_npm",
 		"mode": "file",
