@@ -7,6 +7,8 @@ import * as PIXI from 'pixi.js';
 // es6ターゲットでのReel.jsファイルです
 // es5ターゲットでのRell.jsファイルはReel.jsファイルです。(古い仕様)
 export default class Reel extends PIXI.Container {
+	public static readonly WIDTH: number = 160;
+	public static readonly SYMBOL_SIZE: number = 150;
 	// Reelの親クラスである「PIXI.Sprite」は、numberのを引数に取るコンストラクタのシグニチャを持たないため、
 	// 引数なしに呼びたします。
 	// なお、super実行以前のthisへのアクセスは、thisたらしめる親クラスのprototypeが参照されていないため禁止されており、

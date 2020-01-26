@@ -8,12 +8,24 @@ var SlotGame = /** @class */ (function () {
         var _this = this;
         this.onReady = function () { };
         if (!document.body) {
-            throw new Error("window is not ready");
+            throw new Error('window is not ready');
+        }
+        Debug: {
+            // pixiAppOption.preserveDrawingBuffer = true;
+            document.body.addEventListener('keydown', function (event) {
+                if (event.ctrlKey && event.key === 'c') {
+                    var a = document.createElement('a');
+                    a.setAttribute('href', _this.app.view.toDataURL());
+                    a.setAttribute('download', "figure_" + new Date().getTime());
+                    a.click();
+                }
+            });
         }
         this.app = new PIXI.Application({
             width: SlotGame.width,
             height: SlotGame.height,
-            backgroundColot: 0x1099bb
+            backgroundColor: 0x1099bb,
+            preserveDrawingBuffer: true
         });
         document.body.appendChild(this.app.view);
         for (var i = 0; i < SlotGame.resources.length; i++) {
@@ -26,6 +38,15 @@ var SlotGame = /** @class */ (function () {
         });
     }
     SlotGame.prototype.start = function () {
+        var _this = this;
+        if (!this.ui) {
+            this.onReady = function () { return _this.start(); };
+            return;
+        }
+        this.app.stage.addChild(this.ui);
+        this.app.ticker.add(function () {
+            _this.ui.update();
+        });
     };
     SlotGame.width = 800;
     SlotGame.height = 640;
@@ -33,7 +54,7 @@ var SlotGame = /** @class */ (function () {
         '/assets/animalface_kangaroo.png',
         '/assets/animalface_kirin.png',
         '/assets/animalface_tanuki.png',
-        '/assets/animalface_usagi.png',
+        '/assets/animalface_usagi.png'
     ];
     return SlotGame;
 }());

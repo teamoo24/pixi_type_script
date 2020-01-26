@@ -55,6 +55,8 @@ var Reel = /** @class */ (function (_super) {
     };
     Reel.prototype.updateSymbol = function (symbol) {
     };
+    Reel.WIDTH = 160;
+    Reel.SYMBOL_SIZE = 150;
     return Reel;
 }(PIXI.Container));
 exports["default"] = Reel;
