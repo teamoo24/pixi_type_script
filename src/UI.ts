@@ -55,13 +55,13 @@ export default class UI extends PIXI.Container {
 		coverTop.addChild(textTop);
 		coverBottom.addChild(textBottom);
 
-		this.addChild(this.reelContainer);
-		this.addChild(coverTop);
-		this.addChild(coverBottom);
-
-		console.log(this)
+		PIXI.Container.addChild(this.reelContainer);
+		PIXI.Container.addChild(coverTop);
+		PIXI.Container.addChild(coverBottom);
 
 		coverBottom.interactive = true;
+		coverBottom.buttonMode = true;
+		coverBottom.addListner("pointerdown", ()=>this.startPlay());
 	}
 
 	public startPlay() : void {

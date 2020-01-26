@@ -41,9 +41,14 @@ var UI = /** @class */ (function (_super) {
         textBottom.y = SlotGame_1["default"].height - margin + Math.round((margin - textBottom.height) / 2);
         coverTop.addChild(textTop);
         coverBottom.addChild(textBottom);
-        _this.addChild(_this.reelContainer);
-        _this.addChild(coverTop);
-        _this.addChild(coverBottom);
+        try {
+            _this.addChild(_this.reelContainer);
+            _this.addChild(coverTop);
+            _this.addChild(coverBottom);
+        }
+        catch (_a) {
+            console.log(_this);
+        }
         console.log(_this);
         coverBottom.interactive = true;
         return _this;

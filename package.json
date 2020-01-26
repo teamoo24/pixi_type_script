@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "this is a test package!",
   "main": "index.js",
+  "repository": "fugafuga",
   "scripts": {
     "tsc": "tsc -p .",
     "tslint": "tslint -p .",
