@@ -41,16 +41,13 @@ var UI = /** @class */ (function (_super) {
         textBottom.y = SlotGame_1["default"].height - margin + Math.round((margin - textBottom.height) / 2);
         coverTop.addChild(textTop);
         coverBottom.addChild(textBottom);
-        try {
-            _this.addChild(_this.reelContainer);
-            _this.addChild(coverTop);
-            _this.addChild(coverBottom);
-        }
-        catch (_a) {
-            console.log(_this);
-        }
-        console.log(_this);
+        _this.Container = new PIXI.Container();
+        _this.Container.addChild(_this.reelContainer);
+        _this.Container.addChild(coverTop);
+        _this.Container.addChild(coverBottom);
         coverBottom.interactive = true;
+        coverBottom.buttonMode = true;
+        coverBottom.addListner("pointerdown", function () { return _this.startPlay(); });
         return _this;
     }
     UI.prototype.startPlay = function () {

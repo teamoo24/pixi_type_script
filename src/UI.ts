@@ -23,7 +23,7 @@ export default class UI extends PIXI.Container {
 
 	private reelContainer!: PIXI.Container;
 
-	constructor() {
+	constructor(Container : PIXI.Container) {
 		super();
 
 		const margin = (SlotGame.height - Reel.SYMBOL_SIZE * 3)/ 2;
@@ -55,13 +55,13 @@ export default class UI extends PIXI.Container {
 		coverTop.addChild(textTop);
 		coverBottom.addChild(textBottom);
 
-		PIXI.Container.addChild(this.reelContainer);
-		PIXI.Container.addChild(coverTop);
-		PIXI.Container.addChild(coverBottom);
+		Container.stage.addChild(this.reelContainer);
+		Container.stage.addChild(coverTop);
+		Container.stage.addChild(coverBottom);
 
 		coverBottom.interactive = true;
 		coverBottom.buttonMode = true;
-		coverBottom.addListner("pointerdown", ()=>this.startPlay());
+		coverBottom.addListener("pointerdown", ()=>this.startPlay());
 	}
 
 	public startPlay() : void {

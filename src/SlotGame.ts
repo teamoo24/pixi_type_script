@@ -46,7 +46,7 @@ export default class SlotGame {
 		// ES6では、関数定義に従来のfunctionを利用する構問
 		// loadメソッド引数は、リソースダウンロード完了時のコールバック処理です。ここでUIの初期化と、ゲームの初期化完了コールバックの実行を行います。
 		this.app.loader.load(() => {
-			this.ui = new UI();
+			this.ui = new UI(this.app);
 			this.onReady();
 		});
 	}
