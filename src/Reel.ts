@@ -1,49 +1,72 @@
-// スロットの各リール
-
-// こちらのimport文は"npm install"でインストールされたpixi.jsの全てのAPIを読み込む
 import * as PIXI from 'pixi.js';
+import SlotGame from './SlotGame';
 
-
-// es6ターゲットでのReel.jsファイルです
-// es5ターゲットでのRell.jsファイルはReel.jsファイルです。(古い仕様)
 export default class Reel extends PIXI.Container {
-	public static readonly WIDTH: number = 160;
-	public static readonly SYMBOL_SIZE: number = 150;
-	// Reelの親クラスである「PIXI.Sprite」は、numberのを引数に取るコンストラクタのシグニチャを持たないため、
-	// 引数なしに呼びたします。
-	// なお、super実行以前のthisへのアクセスは、thisたらしめる親クラスのprototypeが参照されていないため禁止されており、
-	// トランスパイルエラーとなります。
-	constructor(index: number) {
-		super();
-	}
+  public static readonly WIDTH: number = 160;
+  public static readonly SYMBOL_SIZE: number = 150;
 
-	// 複数の型を指定した場合、その変数のメソッドを実行する際は型がいずれかであることが明確になっていなければ、
-	// トランスパイル時にエラーとなります。複数の型指定は、パイプで接続します。
-	// ex) 複数の型指定と型の明確化の例
-	// public multipleTypes(value: string|number): void {
-	// 	if(typeof value === 'string') {
-	// 		value.replace('foo','bar');
-	// 	}
-	// }
-	// 型の明確化は、「as」を用いて単一の型にキャストすることでも解決されますが、こちらはキャストした型であることの確実性の
-	// 担保が実装者に委ねられる
-	// ex)型キャストの例
-	// public multipleTypes(value: string | number): void {
-	//	(value as string).replace('foo', 'bar');
-	// }
-	// メソッドの引数には、この他にもオプションやデフォルト値などが利用できます。
-	// ex)引数のオプションとデフォルト
-	// public argsVariants(defaultArg: number = 0, optionArg?: number): void {
-	// 	console.log(defaultArg + (optionArg || 0));
-	// }
-	//
-	// ex) 上記のソースを元に生まれるメソッドシグニチャ
-	// argsVariants(): void;
-	// argsVariants(defaultArg: number): void;
-	// argsVariants(defaultArg: number, optionArg:number): void;
-	public update(): void {
-	}
+  public static get randomTexture(): PIXI.Texture {
+    if (Reel.slotTextures.length === 0) {
+      for (let i = 0; i < SlotGame.resources.length; i++) {
+        const resource = SlotGame.resources[i];
+        Reel.slotTextures.push(PIXI.Texture.from(resource));
+      }
+    }
 
-	private updateSymbol(symbol: PIXI.Sprite): void{
-	}
+    return Reel.slotTextures[Math.floor(Math.random() * Reel.slotTextures.length)];
+  }
+
+  private static slotTextures: PIXI.Texture[] = [];
+
+  public blur: PIXI.filters.BlurFilter = new PIXI.filters.BlurFilter();
+  public index: number = 0;
+  public previousIndex: number = 0;
+
+  constructor(index: number) {
+    super();
+
+    this.x = index * Reel.WIDTH;
+    this.blur.blurX = 0;
+    this.blur.blurY = 0;
+    this.filters = [this.blur];
+
+    for (let i = 0; i < 4; i++) {
+      const symbol = new PIXI.Sprite();
+      this.updateSymbol(symbol);
+      this.addChild(symbol);
+    }
+  }
+
+  public update(): void {
+    this.blur.blurY = (this.index - this.previousIndex) * 8;
+    this.previousIndex = this.index;
+
+    for (let i = 0; i < this.children.length; i++) {
+      const symbol = this.children[i] as PIXI.Sprite;
+      if (!symbol.texture) {
+        continue;
+      }
+
+      const prevY = symbol.y;
+      symbol.y = ((this.index + i) % this.children.length) * Reel.SYMBOL_SIZE - Reel.SYMBOL_SIZE;
+
+      if (prevY <= Reel.SYMBOL_SIZE) {
+        continue;
+      }
+      if (symbol.y >= 0) {
+        continue;
+      }
+
+      this.updateSymbol(symbol);
+    }
+  }
+
+  private updateSymbol(symbol: PIXI.Sprite): void {
+    symbol.texture = Reel.randomTexture;
+    symbol.scale.x = symbol.scale.y = Math.min(
+      Reel.SYMBOL_SIZE / (symbol.width / symbol.scale.x),
+      Reel.SYMBOL_SIZE / (symbol.height / symbol.scale.y),
+    );
+    symbol.x = Math.round((Reel.SYMBOL_SIZE - symbol.width) / 2);
+  }
 }

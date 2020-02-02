@@ -1,40 +1,14 @@
 {
-	"compileerOption": {
-		"target" : "es5",
-		"module" : "esnext",
-		"lib" : [
-			"esnext",
-			"dom"
-		],
-		"baseUrl" : "./src",
-		"outDir" : "./lib-ts",
-		"declaration" : true,
-		"sourceMap" : true,
-		"allowJs": false,
-		"forceConsistentCasingInFileNames" : true,
-		"allowSyntheticDefaultImports": false,
-		"moduleResolution" : "node",
-		"strict": true,
-		"alwaysStrict": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": false,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"preserveConstEnums": false,
-		"moduleResolution":"node"
-	},
-	"compileOnSave": true,
-	"include":[
-		"src/**/*"
-	],
-	"exclude": [
-		"./git",
-		"node_module",
-		"lib"
-	],
-	"typedocOptions" : {
-		"name": "test_npm",
-		"mode": "file",
-		"out": "./docs"
-	}
+  "compilerOptions": {
+    "target": "es6",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "typedocOptions": {
+    "name": "test_npm",
+    "mode": "file",
+    "out": "./docs"
+  }
 }
