@@ -1,3 +1,10 @@
+# 始める前に！
+このソースが回すためにはPIXIの属性が
+
+* "pixi.js": "^5.0.4"
+
+になる必要があります。
+
 # pixi_type_script
 * 最初に以下のリンクでnode.jsをインストール
 [node.jsサイト](https://nodejs.org/en/)
