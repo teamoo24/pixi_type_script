@@ -32,12 +32,12 @@ export default class SlotGame {
       });
     }
     this.app = new PIXI.Application({
+      view: <HTMLCanvasElement>document.getElementById("game"),
       width: SlotGame.width,
       height: SlotGame.height,
       backgroundColor: 0x1099bb,
-        preserveDrawingBuffer: true
+      preserveDrawingBuffer: true
     });
-    document.body.appendChild(this.app.view);
 
     for (let i = 0; i < SlotGame.resources.length; i++) {
       const resource = SlotGame.resources[i];

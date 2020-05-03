@@ -18,12 +18,12 @@ export default class SlotGame {
             });
         }
         this.app = new PIXI.Application({
+            view: document.getElementById("game"),
             width: SlotGame.width,
             height: SlotGame.height,
             backgroundColor: 0x1099bb,
             preserveDrawingBuffer: true
         });
-        document.body.appendChild(this.app.view);
         for (let i = 0; i < SlotGame.resources.length; i++) {
             const resource = SlotGame.resources[i];
             this.app.loader.add(resource);
